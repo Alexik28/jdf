@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title> Таблица </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="table.css" />
+</head>
+
+<body>
+    <div class="header">
+        <p class="text">
+            <a href="index.html"> Основная страница </a>
+            <a href="page2.html"> Позицинионирование элементов </a>
+            <a href="table.css"> Таблица </a>
+        </p>
+    </div>
+
+    <form id="my_form">
+        <label for="i_">Введите какой вы по счету: </label>
+        <input type="text" id="i_">
+        <br>
+        <label for="first_name">Ваше имя: </label>
+        <input type="text" id="first_name">
+        <br>
+        <label for="second_name">Ваша фамилия: </label>
+        <input type="text" id="second_name">
+        <br>
+        <label for="number_book">Ваш номер зачетной книжки: </label>
+        <input type="text" id="number_book">
+        <br>
+        <label for="number_group">Ваш номер группы: </label>
+        <input type="text" id="number_group">
+        <br>
+        <label for="scholarship_availability">Наличие стипендии </label>
+        <input type="text" id="scholarship_availability">
+        <br>
+        <button type="button" id="addButton">Добавить</button>
+    </form>
+
+    <table id="dataTable" style="width: 50%;">
+        <caption>Информация о студентах</caption>
+        <thead>
+            <tr>
+                <th style="width: 30px">#</th>
+                <th> Имя </th>
+                <th> Фамилия </th>
+                <th> Номер зачетной книжки</th>
+                <th> Номер группы </th>
+                <th> Наличие стипендии </th>
+            </tr>
+
+
+            <tr>
+                <td>1</td>
+                <td>Сергей</td>
+                <td>Иванов</td>
+                <td>123456</td>
+                <td>201</td>
+                <td>На месте</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Анна</td>
+                <td>Петрова</td>
+                <td>654321</td>
+                <td>202</td>
+                <td>Была</td>
+            </tr>
+
+
+
+            <tr>
+                <td>3</td>
+                <td>Дмитрий</td>
+                <td>Смирнов</td>
+                <td>789012</td>
+                <td>203</td>
+                <td>На месте</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Мария</td>
+                <td>Кузнецова</td>
+                <td>345678</td>
+                <td>204</td>
+                <td>Была</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Алексей</td>
+                <td>Сидоров</td>
+                <td>901234</td>
+                <td>205</td>
+                <td>Была</td>
+            </tr>
+
+
+            <tr>
+                <td>6</td>
+                <td>Ольга</td>
+                <td>Федорова</td>
+                <td>567890</td>
+                <td>206</td>
+                <td>Была</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>Николай</td>
+                <td>Васильев</td>
+                <td>135792</td>
+                <td>207</td>
+                <td>Была</td>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+
+
+
+
+
+
+
+
+
+    </table>
+
+    <script>
+        document.getElementById('addButton').addEventListener('click', function() {
+            const i = document.getElementById('i_').value;
+            const firstName = document.getElementById('first_name').value;
+            const secondName = document.getElementById('second_name').value;
+            const numberBook = document.getElementById('number_book').value;
+            const numberGroup = document.getElementById('number_group').value;
+            const scholarshipAvailability = document.getElementById('scholarship_availability').value;
+            
+
+           
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${i}</td>
+                <td>${firstName}</td>
+                <td>${secondName}</td>
+                <td>${numberBook}</td>
+                <td>${numberGroup}</td>
+                <td>${scholarshipAvailability}</td>
+
+            `;
+
+            document.querySelector('#dataTable tbody').appendChild(newRow);
+
+                    
+            document.getElementById('my_form').reset();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+</body>
+
+</html>
